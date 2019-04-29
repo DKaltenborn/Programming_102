@@ -1,0 +1,15 @@
+package projectSevenPackage;
+import java.io.IOException;
+public class ProjectSevenDemo 
+{
+	
+	public static void main (String [] args) throws IOException
+	{
+		ProjectSeven SchoolCookies = new ProjectSeven();
+			SchoolCookies.readFile();
+			SchoolCookies.sortByName();
+			SchoolCookies.printInfo();
+			SchoolCookies.sortByNum();
+			SchoolCookies.printInfo();
+}
+}
