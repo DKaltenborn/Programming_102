@@ -1,0 +1,29 @@
+package labTwelvePackage;
+
+public class CS122StudentClass extends CSISstudentClass 
+{
+	private String grade;
+	private int hours;
+	
+	public CS122StudentClass()
+	{
+		super();
+		grade = "A";
+		hours = 25;
+	}
+	
+	public void writeOutput()
+	{
+		super.writeOutput();
+		System.out.print("I plan on getting a/an " + grade +" with studying for " +hours + " hours");
+	}
+	
+	public void setHours(int newHours)
+	{
+		hours = newHours;
+	}
+	public void setGrade(String newGrade)
+	{
+		grade = newGrade;
+	}
+}
