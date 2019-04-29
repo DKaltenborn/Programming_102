@@ -1,0 +1,40 @@
+package labTwelvePackage;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class CS122StudentDemo {
+
+	public static void main ( String [ ] args) throws IOException
+	{
+		CS122StudentClass Student = new CS122StudentClass();
+		Scanner keyboard = new Scanner (System.in);
+		String name;
+		System.out.println("What is your name?");
+		name = keyboard.nextLine();
+		Student.setName(name);
+		
+		String major;
+		System.out.println("What is your major?");
+		major = keyboard.nextLine();
+		Student.setMajor(major);
+		
+		String advisor;
+		System.out.println("Who is your advisor?");
+		advisor = keyboard.nextLine();
+		Student.setAcademicAdvisor(advisor);
+		
+		int hours;
+		System.out.println("How many hours do you plan to study this week?");
+		hours = keyboard.nextInt();
+		Student.setHours(hours);
+		
+		String grade;
+		System.out.println("What grade do you expect to get?");
+		grade = keyboard.next();
+		Student.setGrade(grade);
+		
+		Student.writeOutput();	
+	}
+	
+}
