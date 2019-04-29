@@ -1,0 +1,80 @@
+// Diana Kaltenborn
+package projectSevenPackage;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class ProjectSeven {
+	private String [] classNames;
+	private int [] cookiesSold;
+	private int length;
+	
+	public void readFile() throws IOException
+	{
+		Scanner input = new Scanner(new FileReader("cookies.txt"));
+		length = input.nextInt();
+		classNames = new String[length];
+		cookiesSold = new int [length];
+		
+		for (int i = 0; i<length; i++ )
+			{classNames[i] = input.next();
+			cookiesSold[i] = input.nextInt();
+			
+			}
+		input.close();
+	}
+	public void printInfo()
+	{
+	for (int i = 0; i< length; i++)
+		System.out.println("Name: " + classNames[i] + "       " + "CookiesSold: " + cookiesSold[i]);
+		
+		
+	}
+	
+	public void sortByName()
+	   {  int i, j, minSubscript;
+	    
+	      System.out.println( "Data Alphabetically Organized");
+	      System.out.println("   ");
+	      for ( i = 0; i < length; i++)
+	      {
+		    minSubscript = i;
+	        for ( j = i ; j<length; j++)
+	        {
+	          if ( classNames[j].compareTo(classNames[minSubscript])<0)
+	                minSubscript = j;
+	        }
+	        swap(i, minSubscript);
+	      }
+	   }
+	public void sortByNum()
+	{  int i, j, minSubscript;
+	   
+	   System.out.println( "Data Numerically Organized");
+		  System.out.println("   ");
+	   for ( i = 0; i < length; i++)
+	   {
+		    minSubscript = i;
+	     for ( j = i ; j<length; j++)
+	     {
+	       if ( cookiesSold[j]>(cookiesSold[minSubscript]))
+	             minSubscript = j;
+
+	     }
+	     swap(i, minSubscript);
+	   }
+	   }
+	
+	public void swap (int first, int second)
+	{
+		String temp;
+		int tempTwo;
+		temp = classNames[first];
+		classNames[first] = classNames[second];
+		classNames[second] = temp;
+		
+		tempTwo = cookiesSold[first];
+		cookiesSold[first] = cookiesSold[second];
+		cookiesSold[second] = tempTwo;
+	}	
+}
